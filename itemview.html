@@ -1,0 +1,212 @@
+<html>
+<head>
+    <title>%1 - %2</title>
+    
+    <style>
+        img.preview {
+            border: 1px solid black;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    <script>
+        var visibleImg = 0;
+        
+        function showImage(idx)
+        {
+            var img = document.getElementsByName('img')[visibleImg];
+            if (img) img.style.display = 'none';
+            
+            img = document.getElementsByName('img')[idx];
+            if (img) img.style.display = 'block';
+            
+            visibleImg = idx;
+            
+            var ip = document.getElementById('icount');
+            if (ip) ip.innerHTML = '(' + (idx + 1) + ' de ' + document.getElementsByName('img').length + ')';
+        }
+        
+        function prevImage()
+        {
+            var img = document.getElementsByName('img');
+            var idx = visibleImg - 1;
+            
+            if (idx < 0) showImage(img.length - 1);
+            else showImage(idx);
+        }
+        
+        function nextImage()
+        {
+            var img = document.getElementsByName('img');
+            var idx = visibleImg + 1;
+            
+            if (idx >= img.length) showImage(0);
+            else showImage(idx);
+        }
+    </script>
+    
+    <script>
+        function copyToClipboard()
+        {
+            var ip = document.getElementById('8');
+            if (ip) window.preview.copyToClipboard(ip.innerHTML);
+        }
+    </script>
+</head>
+<body style="background-color: #6A7495">
+    <div id='code'>
+        <img src='qrc:/images/map.png' style='float: left;'></img>
+        <h1 id='1'>%1</h1>
+        %17
+    </div>
+
+    <div id='info'>
+        <div id='name'>
+            <h2 id='2'>%2</h2>
+            <br/>
+            
+            <script>
+                var ip = document.getElementById('2');
+                if (ip && ip.innerHTML.length == 0)
+                {
+                    ip = document.getElementById('name');
+                    if (ip) ip.style.display = 'none';
+                }
+            </script>
+        </div>
+
+        <div id='type'>
+            <h3>%10 </h3>
+            <span id='3'>%3</span>
+            <br/>
+            
+            <script>
+                var ip = document.getElementById('3');
+                if (ip && ip.innerHTML.length == 0)
+                {
+                    ip = document.getElementById('type');
+                    if (ip) ip.style.display = 'none';
+                }
+            </script>
+        </div>
+
+        <div id='state'>
+            <span id='4'>%4</span>
+            <br/>
+            
+            <script>
+                var ip = document.getElementById('4');
+                if (ip && ip.innerHTML.length == 0)
+                {
+                    ip = document.getElementById('state');
+                    if (ip) ip.style.display = 'none';
+                }
+            </script>
+        </div>
+
+        <div id='votes'>
+            <h3>%11 </h3>
+            <span id='5'>%5</span> - <span id='6'>%6%</span>
+            <br/>
+            <br/>
+        </div>
+    </div>
+    
+    <div id='description'>
+        <h3>%12 </h3>
+        <span id='7'>%7</span>
+        <br/>
+        <br/>
+        
+        <script>
+            var ip = document.getElementById('7');
+            if (ip && ip.innerHTML.length == 0)
+            {
+                ip = document.getElementById('description');
+                if (ip) ip.style.display = 'none';
+            }
+        </script>
+    </div>
+    
+    <div id='xmldiv'>
+        <h3>Xml: </h3>
+        <input type='button' value='%15' onclick='copyToClipboard();'/>
+        <br/>
+        <textarea id='xmlview' wrap="virtual" style='font-family: Lucida Console; font-size: 12px;' cols='90' rows='15' multiline=true readonly=readonly></textarea>
+        <br/>
+        <br/>
+        
+        <script>        
+            var ip = document.getElementById('xmlview');
+            if (ip && window.preview.xml) ip.value = window.preview.xml;
+            
+            if (ip && ip.value.length == 0)
+            {
+                ip = document.getElementById('xmldiv');
+                if (ip) ip.style.display = 'none';
+            }
+        </script>
+    </div>
+    
+    <div id='images'>
+        <h3>%13 <span id='icount'></span></h3>
+        <div id='8'>
+        %8
+        </div>
+        <input id='cprev' type='image' onclick='prevImage();' src='qrc:/images/left_%16.png'/>
+        <input id='cnext' type='image' onclick='nextImage();' src='qrc:/images/right_%16.png'/>
+        <br/>
+        <br/>
+        
+        <script>    
+            var img = document.getElementsByName('img');
+            
+            if (img.length > 0)
+            {
+                img[0].style.display = 'block';
+                
+                var ip = document.getElementById('icount');
+                if (ip) ip.innerHTML = '(1 de ' + img.length + ')';
+                
+                if (img.length == 1)
+                {
+                    ip = document.getElementById('cprev');
+                    if (ip) ip.style.display = 'none';
+                    
+                    ip = document.getElementById('cnext');
+                    if (ip) ip.style.display = 'none';
+                }
+            }
+            else
+            {
+                var ip = document.getElementById('images');
+                if (ip) ip.style.display = 'none';
+            }
+        </script>
+    </div>
+    
+    <div id='extra'>
+        <h3>%14 </h3>
+        <span id='9'>%9</span>
+        <br/>
+        <br/>
+        
+        <script>
+            var ip = document.getElementById('9');
+            if (ip && ip.innerHTML.length == 0)
+            {
+                ip = document.getElementById('extra');
+                if (ip) ip.style.display = 'none';
+            }
+        </script>
+    </div>
+</body>
+</html>

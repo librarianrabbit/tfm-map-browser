@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>%1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta http-equiv="Pragma" content="no-cache">
+    <style>
+        img.preview {
+            border: 1px solid black;
+        }
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="background-color: #6A7495">
+    <div id='name'>
+        <img src='%7' style='float: left;'></img>
+        <h1 id='1'>%1</h1>
+        %2
+    </div>
+    <div id='maps'> 
+        <h2>%5</h2>
+        <div id='maplist'>
+            <ul id='maplinks'>%3</ul>
+            
+            <script>
+                var ip = document.getElementById('maplinks');
+                if (ip && ip.innerHTML.length == 0)
+                {
+                    ip = document.getElementById('maps');
+                    if (ip) ip.style.display = 'none';
+                }
+            </script>
+        </div>
+    </div>
+    <div id='dirs'>
+        <h2>%6</h2>
+        <div id='dirlist'>
+            <ul id='dirlinks'>%4</ul>
+            
+            <script>
+                var ip = document.getElementById('dirlinks');
+                if (ip && ip.innerHTML.length == 0)
+                {
+                    ip = document.getElementById('dirs');
+                    if (ip) ip.style.display = 'none';
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

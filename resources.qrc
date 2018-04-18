@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>folder.ico</file>
+        <file>map.ico</file>
+        <file>addfolder.ico</file>
+        <file>addmap.ico</file>
+        <file>delitem.ico</file>
+        <file>edit.ico</file>
+        <file>save.ico</file>
+        <file>move.ico</file>
+        <file>about.ico</file>
+        <file>mapbrowser.ico</file>
+        <file>exit.ico</file>
+        <file>left_pt.png</file>
+        <file>right_pt.png</file>
+        <file>map.png</file>
+        <file>right_en.png</file>
+        <file>left_en.png</file>
+        <file>folder.png</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file>qt_pt.qm</file>
+        <file>mapbrowser_en.qm</file>
+    </qresource>
+    <qresource prefix="/html">
+        <file>folderview.html</file>
+        <file>itemview.html</file>
+        <file>itemexport.html</file>
+        <file>folderexport.html</file>
+    </qresource>
+</RCC>

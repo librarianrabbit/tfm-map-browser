@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MapItemDialog</class>
+ <widget class="QDialog" name="MapItemDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>576</width>
+    <height>695</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>576</width>
+    <height>695</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Editor de Itens</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/mapbrowser.ico</normaloff>:/images/mapbrowser.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Código do mapa:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapCode</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="4">
+    <widget class="QLineEdit" name="mapCode">
+     <property name="inputMask">
+      <string notr="true">@999999; </string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Tipo do mapa:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapType</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="4">
+    <widget class="QLineEdit" name="mapType"/>
+   </item>
+   <item row="7" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Estado do mapa:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="mapStatePerm">
+         <property name="text">
+          <string>Permanente</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="mapStateVoting">
+         <property name="text">
+          <string>Em votação</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="mapStateErased">
+         <property name="text">
+          <string>Apagado</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Votos:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="mapVotes">
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="accelerated">
+          <bool>true</bool>
+         </property>
+         <property name="maximum">
+          <number>65535</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="mapPercent">
+         <property name="accelerated">
+          <bool>true</bool>
+         </property>
+         <property name="suffix">
+          <string>%</string>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>1</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Descrição:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapDescription</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="4">
+    <widget class="QPlainTextEdit" name="mapDescription"/>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Imagens:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapImages</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0" colspan="4">
+    <widget class="QListWidget" name="mapImages">
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Extra:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapExtras</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0" colspan="4">
+    <widget class="QPlainTextEdit" name="mapExtras"/>
+   </item>
+   <item row="18" column="1">
+    <widget class="QPushButton" name="mapSave">
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Salvar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="2" colspan="2">
+    <widget class="QPushButton" name="mapCancel">
+     <property name="text">
+      <string>Cancelar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Xml:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapXml</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="4">
+    <widget class="QPlainTextEdit" name="mapXml"/>
+   </item>
+   <item row="2" column="0" colspan="4">
+    <widget class="QLabel" name="warning"/>
+   </item>
+   <item row="15" column="1">
+    <widget class="QToolButton" name="mapAddImage">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Adicionar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="3">
+    <widget class="QToolButton" name="mapClearImages">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Limpar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="2">
+    <widget class="QToolButton" name="mapRemoveImage">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Apagar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="3">
+    <widget class="QToolButton" name="mapLoadXml">
+     <property name="text">
+      <string>Carregar de arquivo</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="4">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Nome do mapa:</string>
+     </property>
+     <property name="buddy">
+      <cstring>mapName</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="4">
+    <widget class="QLineEdit" name="mapName"/>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>mapCode</tabstop>
+  <tabstop>mapName</tabstop>
+  <tabstop>mapType</tabstop>
+  <tabstop>mapStatePerm</tabstop>
+  <tabstop>mapStateVoting</tabstop>
+  <tabstop>mapStateErased</tabstop>
+  <tabstop>mapVotes</tabstop>
+  <tabstop>mapPercent</tabstop>
+  <tabstop>mapDescription</tabstop>
+  <tabstop>mapXml</tabstop>
+  <tabstop>mapLoadXml</tabstop>
+  <tabstop>mapImages</tabstop>
+  <tabstop>mapAddImage</tabstop>
+  <tabstop>mapRemoveImage</tabstop>
+  <tabstop>mapClearImages</tabstop>
+  <tabstop>mapExtras</tabstop>
+  <tabstop>mapSave</tabstop>
+  <tabstop>mapCancel</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>mapSave</sender>
+   <signal>clicked()</signal>
+   <receiver>MapItemDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>461</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mapCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>MapItemDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>578</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>387</x>
+     <y>507</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
